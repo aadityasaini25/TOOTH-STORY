@@ -8,7 +8,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Tooth Story | Invisalign Specialist & Kids Orthodontics in Ahmedabad",
+  title: "Tooth Story",
   description: "Dr. Nikunj Maniyar (Orthodontist & Pedodontist | Invisalign Specialist). Located at Sunrise Park, Ahmedabad. Gold medalist specialist for adult and kids orthodontic care.",
   keywords: "Dr. Nikunj Maniyar, Orthodontist, Pedodontist, Tooth Story, Invisalign Ahmedabad, Kids Braces, Junior Aligners",
   authors: [{ name: "Dr. Nikunj Maniyar" }],
