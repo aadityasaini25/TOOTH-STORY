@@ -3,28 +3,28 @@ import Image from "next/image";
 export default function GoogleReviews() {
   const reviews = [
     {
-      name: "Amol Kenche",
-      initials: "AK",
-      date: "2 months ago",
-      review: "Dr. Shubham is an incredibly skilled surgeon. I was very nervous about getting dental implants, but he explained everything clearly and the procedure was completely painless. The clinic itself is spotless and highly advanced."
+      name: "bhavin soneji",
+      initials: "BS",
+      date: "1 month ago",
+      review: "I had a great experience. Dr Nikunj was extremely professional and very gentle while treating me, which made me feel comfortable throughout the procedure. I truly appreciate the care and attention given."
     },
     {
-      name: "Shruti Jagtap",
-      initials: "SJ",
-      date: "4 months ago",
-      review: "I had a complex wisdom tooth extraction done here. Dr. Salunkhe and his team made the process so smooth and comfortable. Recovery was much faster than I expected. Highly recommend Face Max for any surgical procedures."
+      name: "Tejas Pansuriya",
+      initials: "TP",
+      date: "3 months ago",
+      review: "I visited Tooth Story for my first-ever teeth cleaning, and the experience was really smooth. From explaining why certain things were happening to the actual cleaning process, everything was handled very well. They made me feel comfortable throughout the procedure. I would totally recommend visiting for a brighter smile and any other dental care needs."
     },
     {
-      name: "Dr. Suyog Shendage",
-      initials: "SS",
-      date: "6 months ago",
-      review: "I had a dental emergency and Dr. Shubham was a lifesaver. He was calm, professional, and very precise. The pain relief was immediate, and the follow-up care was excellent. Truly grateful to the whole team."
+      name: "dixita dubal",
+      initials: "DD",
+      date: "5 months ago",
+      review: "Good experience for my root canal and cap treatment. Doctor was very gentle and patient to me and I was very comfortable and painfree during and after the procedure. Overall a great experience to recommend for any teeth problems."
     },
     {
-      name: "Amit E.",
-      initials: "AE",
-      date: "8 months ago",
-      review: "Top-notch facility. The digital workflow they use for implants is fascinating, and the results are fantastic. Dr. Salunkhe is thorough, professional, and clearly a master at what he does."
+      name: "Maanit Agrawal",
+      initials: "MA",
+      date: "7 months ago",
+      review: "Tooth story is a great place for you to get your teeth corrected. Dr. Nikunj was very helpful in the entire process, where he often behaved like an elder brother. He was very accommodative, where he helped me schedule appointments keeping in mind my academic engagements. He has a very calm and composed approach and maintains a very professional environment"
     }
   ];
 

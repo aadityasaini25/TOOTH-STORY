@@ -1,51 +1,51 @@
 export default function ServiceHighlights() {
   const serviceData = [
     {
-      title: "Dental Implants",
-      image: "/images/implant/single.png",
+      title: "Invisalign & Clear Aligners",
+      image: "/images/ortho/invisalign.png",
       description:
-        "Single, multiple and full-arch implants planned digitally for precise placement and natural-looking results.",
+        "The world's most advanced clear aligner system. Get a perfect smile without wires or brackets.",
       benefits: [
-        "Single & multiple tooth implants",
-        "All-on-4 / All-on-6 full-arch options",
-        "Immediate implants (where indicated)",
-        "Implant-supported crowns and bridges",
+        "Virtually invisible treatment",
+        "Removable & easy to clean",
+        "iTero Digital Scanning",
+        "Starting from ₹90,000",
       ],
     },
     {
-      title: "Full Mouth Rehabilitation",
-      image: "/images/implant/Multiple.png",
+      title: "Junior Aligners for Kids",
+      image: "/images/ortho/junior.png",
       description:
-        "Prosthetic-driven, occlusion-focused rehabilitation for worn, missing or failing teeth, often supported by implants.",
+        "Specialized clear aligner treatment designed specifically for the unique needs of growing children.",
       benefits: [
-        "Comprehensive occlusal analysis",
-        "Smile correction & functional redesign",
-        "Implant-supported full mouth reconstruction",
-        "Digitally designed prosthetic outcomes",
+        "Designed for kids & teens",
+        "Comfortable & wire-free",
+        "Corrects overcrowding & gaps",
+        "Gentle on young teeth",
       ],
     },
     {
-      title: "Supporting Surgical Procedures",
-      image: "/images/implant/supported.png",
+      title: "Kids Jaw Expanders",
+      image: "/images/ortho/expander.png",
       description:
-        "Procedures that prepare and support implant and restorative care, delivered with a focus on comfort and safety.",
+        "Early intervention to create space and guide jaw growth for a healthier, straighter smile.",
       benefits: [
-        "Surgical extractions & minor oral surgery",
-        "Bone grafting and site development",
-        "Soft tissue management",
-        "Careful post-operative follow-up",
+        "Prevent future extractions",
+        "Improve speech and breathing",
+        "Correct crossbites early",
+        "Painless orthopedic growth",
       ],
     },
     {
-      title: "Cosmetic & Restorative Dentistry",
-      image: "/images/implant/all_in.png",
+      title: "Adult Orthodontics",
+      image: "/images/ortho/braces.png",
       description:
-        "Restorative and aesthetic dentistry to complete your treatment plan and harmonise your smile with your new implants.",
+        "Customized orthodontic solutions for adults who want to enhance their smile and oral health.",
       benefits: [
-        "Ceramic crowns and bridges",
-        "Smile enhancement and contouring",
-        "Tooth-coloured restorations",
-        "Long-term maintenance planning",
+        "Ceramic & Lingual braces",
+        "Metal self-ligating braces",
+        "Smile redesign & alignment",
+        "Long-term stability planning",
       ],
     },
   ];
@@ -55,11 +55,11 @@ export default function ServiceHighlights() {
       <div className="max-w-7xl mx-auto">
         <p className="text-[#d4af37] font-semibold text-sm uppercase tracking-[0.2em] mb-2">Our Services</p>
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
-          Surgical & Implant Care
+          Advanced Orthodontics
         </h2>
         <div className="w-16 h-0.5 bg-[#485b51] rounded-full mb-4" />
         <p className="text-gray-400 max-w-2xl mb-14">
-          From single implants to full mouth rehabilitation and corrective jaw surgery — all under one roof, with a fully digital workflow.
+          From Invisalign and Junior Aligners to early jaw expansion — we specialize in creating beautiful smiles for all ages with a fully digital workflow.
         </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">

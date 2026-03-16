@@ -6,26 +6,26 @@ interface HeroSectionProps {
 
 export default function HeroSection({ onBookAppointment }: HeroSectionProps) {
   return (
-    <section className="relative pt-12 pb-20 md:pt-24 md:pb-28 px-4 md:px-12 lg:px-16 max-w-7xl mx-auto overflow-hidden">
-      <div className="text-center mb-14 md:mb-16">
-        <p className="text-[#485b51] font-semibold text-sm uppercase tracking-[0.2em] mb-4">Face Max Dental Clinic</p>
+    <section className="relative pt-6 pb-20 md:pt-12 md:pb-28 px-4 md:px-12 lg:px-16 max-w-7xl mx-auto overflow-hidden">
+      <div className="text-center mb-10 md:mb-12">
+        <p className="text-[#485b51] font-semibold text-sm uppercase tracking-[0.2em] mb-4">Tooth Story – Dental Clinic For All</p>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-6 leading-tight">
-          Expert Oral & Maxillofacial<br className="hidden md:block" />
-          <span className="text-[#485b51]">Surgical Care</span>
+          Invisalign & Kids<br className="hidden md:block" />
+          <span className="text-[#485b51]">Orthodontics Specialist</span>
         </h1>
         <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed font-light">
-          Specialist-led implant and full mouth rehabilitation centre in Pune, led by{" "}
-          <span className="font-semibold">Dr. Shubham Sunil Salunkhe (BDS, MDS – Oral &amp; Maxillofacial Surgery)</span>{" "}
-          and <span className="font-semibold">Dr. Rasika Salunkhe (BDS, MDS – Prosthodontics)</span>.
+          Specialist-led advanced dental care in Ahmedabad, led by{" "}
+          <span className="font-semibold">Dr. Nikunj Maniyar (BDS, MDS – Orthodontist & Pedodontist)</span>. 
+          Expert in Invisalign & Kids Dental Care.
         </p>
       </div>
 
-      <div className="md:flex md:items-center md:justify-center md:gap-16 md:mb-16 max-w-5xl mx-auto">
+      <div className="md:flex md:items-center md:justify-center md:gap-16 md:mb-12 max-w-5xl mx-auto">
         <div className="relative rounded-2xl aspect-[9/16] md:aspect-auto md:h-[450px] md:w-[260px] mx-auto md:mx-0 mb-8 md:mb-0 md:flex-initial overflow-hidden shadow-2xl ring-1 ring-black/5">
           <div className="bg-black w-full h-full flex items-center justify-center">
             <video
-              className="w-full h-full object-contain"
-              src="/videos/1st vedio.mp4"
+              className="w-full h-full object-cover"
+              src="/videos/My Movie.mp4"
               autoPlay
               muted
               loop
@@ -42,22 +42,22 @@ export default function HeroSection({ onBookAppointment }: HeroSectionProps) {
             <ul className="space-y-5 mb-10 text-[15px] text-gray-300 leading-relaxed">
               <li className="flex items-start gap-3">
                 <span className="text-[#d4af37] mt-0.5">—</span>
-                Oral & Maxillofacial Surgery
+                Certified Invisalign Provider
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-[#d4af37] mt-0.5">—</span>
-                Advanced Digital Implantology
+                Junior Aligners & Kids Expanders
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-[#d4af37] mt-0.5">—</span>
-                Pain-Managed Surgical Protocols
+                iTero Scanner - See Your Future Smile
               </li>
             </ul>
             <button
               onClick={onBookAppointment}
               className="w-full bg-[#d4af37] text-gray-900 px-6 py-4 rounded-xl text-base font-semibold hover:bg-[#c9a227] transition-colors"
             >
-              Book Your Consultation
+              Get Your Smile Simulation
             </button>
           </div>
         </div>
@@ -71,10 +71,10 @@ export default function HeroSection({ onBookAppointment }: HeroSectionProps) {
           Book Appointment
         </button>
         <a
-          href="tel:+918080697453"
+          href="tel:+919726992969"
           className="bg-white text-[#485b51] border-2 border-[#485b51] py-4 px-10 rounded-xl font-semibold text-base text-center hover:bg-[#f8faf9] transition-colors md:min-w-[220px]"
         >
-          Call +91 80806 97453
+          Call +91 97269 92969
         </a>
       </div>
     </section>

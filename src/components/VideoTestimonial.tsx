@@ -5,7 +5,7 @@ export default function VideoTestimonial() {
         <div className="text-center mb-6 md:mb-10">
           <h2 className="text-xl md:text-3xl font-bold mb-4">Patient Stories</h2>
           <p className="text-gray-600 text-sm md:text-base">
-            Hear directly from our satisfied patients about their experience at Face Max Dental Clinic.
+            Hear directly from our satisfied patients about their experience at Tooth Story – Dental Clinic For All.
           </p>
         </div>
 
