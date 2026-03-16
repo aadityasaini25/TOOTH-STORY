@@ -51,14 +51,14 @@ export default function ServiceHighlights() {
   ];
 
   return (
-    <section className="relative bg-[#0b1120] text-white py-20 md:py-28 px-4 md:px-8 lg:px-12">
+    <section className="relative bg-[#2d3e40] text-white py-20 md:py-28 px-4 md:px-8 lg:px-12">
       <div className="max-w-7xl mx-auto">
-        <p className="text-[#d4af37] font-semibold text-sm uppercase tracking-[0.2em] mb-2">Our Services</p>
+        <p className="text-[#72b1b1] font-semibold text-sm uppercase tracking-[0.2em] mb-2">Our Services</p>
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
           Advanced Orthodontics
         </h2>
-        <div className="w-16 h-0.5 bg-[#485b51] rounded-full mb-4" />
-        <p className="text-gray-400 max-w-2xl mb-14">
+        <div className="w-16 h-0.5 bg-[#72b1b1] rounded-full mb-4" />
+        <p className="text-gray-300 max-w-2xl mb-14">
           From Invisalign and Junior Aligners to early jaw expansion — we specialize in creating beautiful smiles for all ages with a fully digital workflow.
         </p>
 
@@ -66,7 +66,7 @@ export default function ServiceHighlights() {
           {serviceData.map((service, index) => (
             <div
               key={index}
-              className="bg-slate-800/60 border border-slate-700/60 p-6 rounded-2xl flex flex-col hover:border-slate-600 hover:bg-slate-800/80 transition-all duration-300"
+              className="bg-white/5 border border-white/10 p-6 rounded-2xl flex flex-col hover:border-[#72b1b1]/30 hover:bg-white/10 transition-all duration-300"
             >
               <div className="relative rounded-xl mb-6 aspect-[4/3] flex items-center justify-center overflow-hidden bg-white/5 border border-slate-600/50 p-4">
                 <img
@@ -77,10 +77,10 @@ export default function ServiceHighlights() {
               </div>
               <h3 className="font-bold mb-3 text-lg text-white">{service.title}</h3>
               <p className="text-[15px] text-gray-400 leading-relaxed mb-5 flex-grow">{service.description}</p>
-              <ul className="space-y-2 text-[13px] text-gray-400">
+              <ul className="space-y-2 text-[13px] text-slate-300">
                 {service.benefits.map((b, i) => (
                   <li key={i} className="flex items-start gap-2">
-                    <span className="text-[#d4af37] mt-0.5">—</span>
+                    <span className="text-[#72b1b1] mt-0.5">—</span>
                     <span>{b}</span>
                   </li>
                 ))}

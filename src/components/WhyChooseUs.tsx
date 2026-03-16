@@ -19,14 +19,14 @@ const points = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-20 md:py-28 px-4 md:px-8 bg-gray-50/80">
+    <section className="py-20 md:py-28 px-4 md:px-8 bg-[#f1f7f7]">
       <div className="max-w-6xl mx-auto">
         <div className="text-center md:text-left mb-12">
-          <p className="text-[#485b51] font-semibold text-sm uppercase tracking-[0.2em] mb-2">Why Tooth Story</p>
+          <p className="text-[#72b1b1] font-semibold text-sm uppercase tracking-[0.2em] mb-2">Why Tooth Story</p>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-4">
             Why Choose Tooth Story
           </h2>
-          <div className="w-16 h-0.5 bg-[#d4af37] rounded-full mx-auto md:mx-0" />
+          <div className="w-16 h-0.5 bg-[#72b1b1] rounded-full mx-auto md:mx-0" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">

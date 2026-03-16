@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 border-t border-gray-800 pt-8 pb-4 text-gray-400">
+    <footer className="bg-[#2d3e40] border-t border-white/5 pt-8 pb-4 text-gray-300">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="text-center mb-8">
           <div className="bg-white p-2 rounded-xl inline-block mb-4 shadow-xl">
@@ -22,17 +22,17 @@ export default function Footer() {
           <div className="space-y-2">
             <h3 className="font-bold text-white text-base border-b border-gray-800 pb-1">Contact Us</h3>
             <div className="space-y-1 mt-2">
-              <a href="tel:+919726992969" className="block text-[#d4af37] font-bold text-lg hover:scale-105 transition-transform inline-block">+91 97269 92969</a>
+              <a href="tel:+919726992969" className="block text-[#72b1b1] font-bold text-lg hover:scale-105 transition-transform inline-block">+91 97269 92969</a>
               <p className="text-gray-300 font-medium text-xs">9023523178</p>
               <p className="text-gray-300 font-medium text-xs">Tooth Story Dental Clinic</p>
-              <a href="mailto:maniar09@gmail.com" className="text-xs hover:text-white transition-colors block">maniar09@gmail.com</a>
+              <a href="mailto:maniar09@gmail.com" className="text-xs hover:text-[#72b1b1] transition-colors block">maniar09@gmail.com</a>
             </div>
           </div>
 
           <div className="space-y-2">
             <h3 className="font-bold text-white text-base border-b border-gray-800 pb-1">Clinic Hours</h3>
             <div className="flex items-start justify-center md:justify-start gap-2 mt-2">
-              <span className="text-[#d4af37] text-lg">🕒</span>
+              <span className="text-[#72b1b1] text-lg">🕒</span>
               <div className="text-gray-300 space-y-0.5 text-xs">
                 <p className="font-bold">Mon–Sat</p>
                 <p>10:30 AM – 1:00 PM</p>
@@ -53,7 +53,7 @@ export default function Footer() {
             >
               <div className="flex items-start justify-center md:justify-start gap-2">
                 <span className="text-xl">📍</span>
-                <span className="text-gray-300 leading-relaxed group-hover:text-[#d4af37] transition-colors">
+                <span className="text-gray-300 leading-relaxed group-hover:text-[#72b1b1] transition-colors">
                   House No. 8, 1st Floor, Sunrise Park,<br />
                   Next to Sales India Showroom,<br />
                   Drive-In Road, Gurukul, Ahmedabad
@@ -80,7 +80,7 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-            <p className="mt-2 text-[10px] sm:text-[11px] text-[#485b51] font-medium leading-tight">
+            <p className="mt-2 text-[10px] sm:text-[11px] text-[#72b1b1] font-medium leading-tight">
               Invisalign treatment starts at ₹90,000. 20% Off special offer available for a limited time.
             </p>
           </div>
