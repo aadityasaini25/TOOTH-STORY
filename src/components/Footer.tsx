@@ -22,10 +22,10 @@ export default function Footer() {
           <div className="space-y-2">
             <h3 className="font-bold text-white text-base border-b border-gray-800 pb-1">Contact Us</h3>
             <div className="space-y-1 mt-2">
-              <a href="tel:+919726992969" className="block text-[#72b1b1] font-bold text-lg hover:scale-105 transition-transform inline-block">+91 97269 92969</a>
+              <a href="tel:+919023523178" className="block text-[#72b1b1] font-bold text-lg hover:scale-105 transition-transform inline-block">+91 90235 23178</a>
               <p className="text-gray-300 font-medium text-xs">9023523178</p>
               <p className="text-gray-300 font-medium text-xs">Tooth Story Dental Clinic</p>
-              <a href="mailto:maniar09@gmail.com" className="text-xs hover:text-[#72b1b1] transition-colors block">maniar09@gmail.com</a>
+              <a href="mailto:info@toothstory.co.in" className="text-xs hover:text-[#72b1b1] transition-colors block">info@toothstory.co.in</a>
             </div>
           </div>
 
@@ -35,8 +35,7 @@ export default function Footer() {
               <span className="text-[#72b1b1] text-lg">🕒</span>
               <div className="text-gray-300 space-y-0.5 text-xs">
                 <p className="font-bold">Mon–Sat</p>
-                <p>10:30 AM – 1:00 PM</p>
-                <p>5:30 PM – 8:30 PM</p>
+                <p>10:30 AM – 8:30 PM</p>
                 <p className="font-bold mt-1">Sunday</p>
                 <p>By Appointment Only</p>
               </div>

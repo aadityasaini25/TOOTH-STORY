@@ -8,8 +8,8 @@ export default function ClinicPhotos({ onBookAppointment }: ClinicPhotosProps) {
   const clinicImages = [
     { src: '/images/clinic/CLINIC1.jpeg', alt: 'Modern Clinic Interior' },
     { src: '/images/clinic/CLINIC2.jpeg', alt: 'Comfortable Reception Area' },
-    { src: '/images/clinic/CLINIC3.webp', alt: 'Advanced Dental Lab' },
-    { src: '/images/clinic/CLINIC4.webp', alt: 'State-of-the-art Equipment' },
+    { src: '/images/clinic/clinic7.webp', alt: 'Advanced Dental Lab' },
+    { src: '/images/clinic/clinic6.jpeg', alt: 'State-of-the-art Equipment' },
   ];
 
   return (

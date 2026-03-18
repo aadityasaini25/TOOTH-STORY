@@ -66,13 +66,13 @@ export default function ServiceHighlights() {
           {serviceData.map((service, index) => (
             <div
               key={index}
-              className="bg-white/5 border border-white/10 p-6 rounded-2xl flex flex-col hover:border-[#72b1b1]/30 hover:bg-white/10 transition-all duration-300"
+              className="bg-white/5 border border-white/10 p-6 rounded-2xl flex flex-col hover:border-[#72b1b1]/30 hover:bg-white/10 transition-all duration-300 hover-lift"
             >
-              <div className="relative rounded-xl mb-6 aspect-[4/3] flex items-center justify-center overflow-hidden bg-white/5 border border-slate-600/50 p-4">
+              <div className="relative rounded-xl mb-6 aspect-[4/3] flex items-center justify-center overflow-hidden bg-white/5 border border-slate-600/50 p-4 shimmer-effect">
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-contain transition-transform duration-500 hover:scale-110"
                 />
               </div>
               <h3 className="font-bold mb-3 text-lg text-white">{service.title}</h3>

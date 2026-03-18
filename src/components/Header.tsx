@@ -38,7 +38,7 @@ export default function Header({ onBookAppointment }: HeaderProps) {
             className="hidden sm:flex flex-col items-end mr-0 sm:mr-1 text-right"
           >
             <span className="text-[9px] uppercase tracking-widest font-bold text-gray-400">Call Specialist</span>
-            <span className="text-[#485b51] font-bold text-xs sm:text-sm leading-tight">+91 97269 92969</span>
+            <span className="text-[#485b51] font-bold text-xs sm:text-sm leading-tight">+91 90235 23178</span>
           </a>
           <button
             onClick={onBookAppointment}

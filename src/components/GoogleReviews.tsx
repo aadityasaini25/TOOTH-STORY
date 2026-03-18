@@ -3,28 +3,28 @@ import Image from "next/image";
 export default function GoogleReviews() {
   const reviews = [
     {
-      name: "bhavin soneji",
-      initials: "BS",
-      date: "1 month ago",
-      review: "I had a great experience. Dr Nikunj was extremely professional and very gentle while treating me, which made me feel comfortable throughout the procedure. I truly appreciate the care and attention given."
+      name: "Nikunj Pujara",
+      initials: "NP",
+      date: "Recent",
+      review: "Great experience at Tooth Story dental clinic. Dr. Nikunj and Dr. Shruti are extremely knowledgeable and skilled. The clinic is welcoming, and the treatment results were excellent. I recommend everyone to visit this place for any dental concerns."
     },
     {
-      name: "Tejas Pansuriya",
-      initials: "TP",
-      date: "3 months ago",
-      review: "I visited Tooth Story for my first-ever teeth cleaning, and the experience was really smooth. From explaining why certain things were happening to the actual cleaning process, everything was handled very well. They made me feel comfortable throughout the procedure. I would totally recommend visiting for a brighter smile and any other dental care needs."
+      name: "Priyanka Shah",
+      initials: "PS",
+      date: "Recent",
+      review: "Wonderful experience, the doctor there was so kind and gentle to me. Also he did my treatment without any type of pain, also the work he did was flawless. Best Environment and positive vibe in clinic and also both doctors are good."
     },
     {
-      name: "dixita dubal",
-      initials: "DD",
-      date: "5 months ago",
-      review: "Good experience for my root canal and cap treatment. Doctor was very gentle and patient to me and I was very comfortable and painfree during and after the procedure. Overall a great experience to recommend for any teeth problems."
+      name: "Utsav",
+      initials: "UT",
+      date: "Recent",
+      review: "Best dental clinic in Vastrapur area. Very happy with Dr Nikunj for my ongoing braces treatment. His expertise & personalized approach have made the experience comfortable and enjoyable. The entire team is friendly and professional."
     },
     {
-      name: "Maanit Agrawal",
-      initials: "MA",
-      date: "7 months ago",
-      review: "Tooth story is a great place for you to get your teeth corrected. Dr. Nikunj was very helpful in the entire process, where he often behaved like an elder brother. He was very accommodative, where he helped me schedule appointments keeping in mind my academic engagements. He has a very calm and composed approach and maintains a very professional environment"
+      name: "Sangeeta Rai",
+      initials: "SR",
+      date: "Recent",
+      review: "I visited Tooth Story a week ago & had an excellent experience. The treatment was smooth & completely painless, & my dental problems are fully resolved. Doctors are highly skilled & incredibly friendly, which made the whole process very comfortable."
     }
   ];
 

@@ -1,19 +1,19 @@
 const points = [
   {
-    title: "Gold Medalist Specialist",
-    desc: "Your care is led by Dr. Nikunj Maniyar, a Gold Medalist Orthodontist & Pedodontist with 6 years of experience. Specialist in complex adult and kids orthodontic cases.",
+    title: "Certified Specialist Dentist",
+    desc: "Our clinic is led by top-tier specialists who are recognized experts in their fields, ensuring you receive the highest standard of dental care.",
   },
   {
-    title: "iTero Smile Simulation",
-    desc: "We use the advanced iTero Scanner to create 3D digital impressions. See your future smile even before starting your Invisalign treatment!",
+    title: "Patient First Approach",
+    desc: "We prioritize your comfort and well-being, tailoring every treatment plan to meet your unique needs and ensure a stress-free experience.",
   },
   {
-    title: "Kids-Friendly Environment",
-    desc: "Expertise in pediatric dentistry ensures a calm, positive, and fear-free experience for your little ones. Specialists in Junior Aligners and kids' jaw growth.",
+    title: "Numerous Awards & Recognizations",
+    desc: "Our commitment to excellence has been honored with multiple prestigious awards, reflecting our dedication to clinical success.",
   },
   {
-    title: "Affordable Premium Care",
-    desc: "Get world-class Invisalign treatment starting at ₹90,000. Benefit from our limited-time special offer of 20% off on Invisalign treatments.",
+    title: "Advanced Technological Solutions",
+    desc: "We utilize cutting-edge dental technology, from 3D scanning to laser treatments, to provide precise, efficient, and painless care.",
   },
 ];
 

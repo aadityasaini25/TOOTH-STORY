@@ -101,9 +101,11 @@ export default function Home() {
 
   return (
     <div>
-      {/* Subtle background – one soft shape, no bouncy/ping */}
+      {/* Interactive Background Graphics */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-[480px] h-[480px] rounded-full bg-[#485b51]/[0.03]" aria-hidden="true" />
+        <div className="floating-blob w-[500px] h-[500px] -top-24 -left-24 opacity-20 soft-float" />
+        <div className="floating-blob w-[400px] h-[400px] top-1/2 -right-20 opacity-10 soft-float" style={{ animationDelay: '-2s' }} />
+        <div className="floating-blob w-[300px] h-[300px] bottom-10 left-1/4 opacity-15 soft-float" style={{ animationDelay: '-4s' }} />
       </div>
 
       {/* Main Content */}
