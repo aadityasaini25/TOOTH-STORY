@@ -1,48 +1,54 @@
+'use client';
+
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 interface HeaderProps {
   onBookAppointment: () => void;
 }
 
 export default function Header({ onBookAppointment }: HeaderProps) {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className="relative z-50 glass shadow-premium py-3 lg:py-5 px-4 transition-all duration-300">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-1.5 lg:gap-3">
-        <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
-          <Image
-            src="/images/logo.webp"
-            alt="Tooth Story Dental Clinic Logo"
-            width={160}
-            height={60}
-            className="h-auto w-24 md:w-32 lg:w-44 hover:opacity-90 transition-opacity"
-          />
-          <div className="hidden sm:block w-px h-6 bg-gray-200"></div>
-          <a
-            href="https://www.google.com/maps/search/?api=1&query=Tooth+Story+Dental+Clinic+Sunrise+Park+Ahmedabad"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-center sm:text-left hover:text-[#485b51] transition-colors"
-          >
-            <div className="flex items-center gap-1 justify-center sm:justify-start text-[9px] sm:text-[10px] uppercase tracking-widest font-bold text-gray-400">
-              <span>📍 Location</span>
-            </div>
-            <p className="text-[11px] sm:text-xs font-medium text-gray-700 leading-tight">
-              Sunrise Park, Gurukul, Ahmedabad
-            </p>
-          </a>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      isScrolled ? 'glass-header scrolled py-2' : 'bg-transparent py-4'
+    }`}>
+      <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between">
+        <div className="flex items-center gap-4 md:gap-8">
+          <div className="bg-white p-1.5 rounded-xl shadow-lg border border-gray-100">
+            <Image
+              src="/images/logo.webp"
+              alt="Tooth Story Dental Clinic"
+              width={140}
+              height={45}
+              className="h-8 md:h-10 w-auto"
+            />
+          </div>
+          <div className="hidden lg:block">
+            <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-gray-400 mb-0.5">Location</p>
+            <p className="text-xs font-semibold text-gray-700">Sunrise Park, Gurukul, Ahmedabad</p>
+          </div>
         </div>
 
-        <div className="flex items-center flex-wrap justify-center gap-2 sm:gap-3 mt-1 lg:mt-0">
-          <a
-            href="tel:+919726992969"
-            className="hidden sm:flex flex-col items-end mr-0 sm:mr-1 text-right"
-          >
-            <span className="text-[9px] uppercase tracking-widest font-bold text-gray-400">Call Specialist</span>
-            <span className="text-[#485b51] font-bold text-xs sm:text-sm leading-tight">+91 90235 23178</span>
-          </a>
+        <div className="flex items-center gap-4 md:gap-8">
+          <div className="hidden sm:block text-right">
+            <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-gray-400 mb-0.5">Call Specialist</p>
+            <a href="tel:+919023523178" className="text-sm font-bold text-[#485b51] hover:text-[#72b1b1] transition-colors">
+              +91 90235 23178
+            </a>
+          </div>
           <button
             onClick={onBookAppointment}
-            className="btn-primary shadow-emerald-500/20 py-1.5 px-4 text-xs font-medium"
+            className="bg-[#72b1b1] text-white px-6 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-[#5a8d8d] hover:shadow-lg hover:-translate-y-0.5 transition-all shadow-md"
           >
             Book Appointment
           </button>

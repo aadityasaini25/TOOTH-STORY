@@ -7,7 +7,7 @@ interface DoctorProfileProps {
 const doctors = [
   {
     name: "Dr. Nikunj Maniyar",
-    title: "BDS, MDS – Orthodontist & Pedodontist",
+    title: "BDS, MDS – Aligner Specialist",
     image: "/images/doctor/Dr. NIKUNJ.jpeg",
     description: "Dr. Nikunj Maniyar is a Gold Medalist Orthodontist and a certified Invisalign provider, specializing in both adult and pediatric orthodontics. With over 6 years of experience, he brings a unique combination of clinical excellence and a gentle, patient-focused approach.",
     highlights: [
@@ -16,7 +16,7 @@ const doctors = [
       "Expertise in Kids Expanders & Early Orthodontics",
       "Recognized for Excellence with Multiple Awards"
     ],
-    footer: "Being a specialist in Kids Orthodontics, he ensures a calm and positive environment for children, making their dental journey comfortable and fear-free."
+    footer: "Having special interests in Kids Orthodontics, he ensures a calm and positive environment for children, making their dental journey comfortable and fear-free."
   },
   {
     name: "Dr. Shruti Thakkar",

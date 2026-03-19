@@ -2,19 +2,19 @@
 
 import { useEffect, useState } from "react";
 
-// Import all components
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import ServiceHighlights from "@/components/ServiceHighlights";
-import CTABox from "@/components/CTABox";
-import GoogleReviews from "@/components/GoogleReviews";
-import DoctorProfile from "@/components/DoctorProfile";
-import ClinicPhotos from "@/components/ClinicPhotos";
-import Footer from "@/components/Footer";
-import PopupForm from "@/components/PopupForm";
-import StickyCTA from "@/components/StickyCTA";
 import WhyChooseUs from "@/components/WhyChooseUs";
+import DoctorProfile from "@/components/DoctorProfile";
+import ServiceHighlights from "@/components/ServiceHighlights";
 import FAQSection from "@/components/FAQSection";
+import ClinicPhotos from "@/components/ClinicPhotos";
+import GoogleReviews from "@/components/GoogleReviews";
+import CTABox from "@/components/CTABox";
+import Footer from "@/components/Footer";
+import StickyCTA from "@/components/StickyCTA";
+import PopupForm from "@/components/PopupForm";
+import BackgroundGraphics from "@/components/BackgroundGraphics";
 
 export default function Home() {
   const [showStickyCta, setShowStickyCta] = useState(false);
@@ -84,8 +84,8 @@ export default function Home() {
       });
     }, observerOptions);
 
-    document.querySelectorAll('section').forEach((section) => {
-      observer.observe(section);
+    document.querySelectorAll('section, .fade-up').forEach((el) => {
+      observer.observe(el);
     });
 
     return () => observer.disconnect();
@@ -100,13 +100,8 @@ export default function Home() {
   };
 
   return (
-    <div>
-      {/* Interactive Background Graphics */}
-      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        <div className="floating-blob w-[500px] h-[500px] -top-24 -left-24 opacity-20 soft-float" />
-        <div className="floating-blob w-[400px] h-[400px] top-1/2 -right-20 opacity-10 soft-float" style={{ animationDelay: '-2s' }} />
-        <div className="floating-blob w-[300px] h-[300px] bottom-10 left-1/4 opacity-15 soft-float" style={{ animationDelay: '-4s' }} />
-      </div>
+    <div className="bg-medical-light min-h-screen">
+      <BackgroundGraphics />
 
       {/* Main Content */}
       <div className="relative z-10">

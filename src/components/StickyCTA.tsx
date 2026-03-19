@@ -26,7 +26,7 @@ export default function StickyCTA({ isVisible, onBookAppointment }: StickyCtaPro
   }
 
   return (
-    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-4xl glass shadow-2xl rounded-3xl p-6 z-50 animate-in fade-in slide-in-from-bottom-5 duration-500">
+    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-4xl glass-premium shadow-2xl rounded-[32px] p-6 z-50 animate-in fade-in slide-in-from-bottom-5 duration-700 border border-white/50 backdrop-blur-2xl">
       <button
         onClick={() => setIsMinimized(true)}
         className="absolute -top-3 -right-3 bg-white text-gray-500 hover:text-gray-900 rounded-full w-8 h-8 shadow-md flex items-center justify-center border border-gray-100 transition-colors z-10"

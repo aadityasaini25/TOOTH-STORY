@@ -68,7 +68,6 @@ export default function Footer() {
             <h3 className="font-bold text-gray-900 mb-2 text-sm border-b border-gray-100 pb-1">Payment &amp; Billing</h3>
             <ul className="grid grid-cols-2 gap-2 mt-2">
               {[
-                { name: "Credit & Debit Card", icon: "💳" },
                 { name: "UPI / GPay", icon: "📱" },
                 { name: "Cash", icon: "💵" },
                 { name: "EMI for Invisalign", icon: "🏦" }
@@ -80,7 +79,7 @@ export default function Footer() {
               ))}
             </ul>
             <p className="mt-2 text-[10px] sm:text-[11px] text-[#72b1b1] font-medium leading-tight">
-              Invisalign treatment starts at ₹90,000. 20% Off special offer available for a limited time.
+              Avail limited period offer of upto 20% Off on Invisalign treatment with prices starting from as low as Rs 90,000 only.
             </p>
           </div>
 

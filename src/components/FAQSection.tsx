@@ -7,29 +7,29 @@ export default function FAQSection() {
 
   const faqs = [
     {
-      question: "Are dental implants painful?",
+      question: "How do Invisalign aligners work?",
       answer:
-        "Implant procedures are performed under local anaesthesia. Most patients report only mild discomfort afterwards, which is usually well controlled with routine medication.",
+        "Invisalign uses a series of custom-made, clear plastic trays to gradually shift your teeth into the desired position. Each set is worn for about 1-2 weeks before moving to the next in the series.",
     },
     {
-      question: "How long do dental implants last?",
+      question: "What is the right age for a child's first orthodontic evaluation?",
       answer:
-        "With proper oral hygiene, regular check-ups and professional maintenance, dental implants can last many years and often decades.",
+        "The American Association of Orthodontists recommends a first check-up by age 7. Early evaluation allows us to detect potential issues and intervene at the optimal time for the best results.",
     },
     {
-      question: "Am I a candidate for full mouth implants?",
+      question: "How long will my orthodontic treatment take?",
       answer:
-        "Most patients with multiple missing or failing teeth are candidates. A detailed clinical and radiographic evaluation is required to confirm bone quality and plan the right approach.",
+        "Treatment duration varies based on the complexity of the case. On average, Invisalign or braces treatment takes between 12 to 24 months, though some minor corrections can be completed in as little as 6 months.",
     },
     {
-      question: "How long does full mouth implant treatment take?",
+      question: "Can I eat normally with braces or aligners?",
       answer:
-        "Timelines vary based on bone condition and case complexity. In suitable cases, immediate protocols are possible; in others, a staged approach is safer and more predictable.",
+        "With Invisalign, you remove the trays to eat, so there are no dietary restrictions. With traditional braces, we recommend avoiding very hard, sticky, or crunchy foods to prevent damage to the brackets and wires.",
     },
     {
-      question: "Is the implant procedure safe?",
+      question: "Are clear aligners as effective as traditional metal braces?",
       answer:
-        "When performed by trained specialists following proper protocols, dental implants are a highly predictable and safe treatment option.",
+        "Yes, for most cases, modern clear aligners are just as effective as traditional braces. During your consultation, we will determine which option is best suited for your specific dental needs.",
     }
   ];
 

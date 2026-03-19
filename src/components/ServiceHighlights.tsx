@@ -66,21 +66,22 @@ export default function ServiceHighlights() {
           {serviceData.map((service, index) => (
             <div
               key={index}
-              className="bg-white/5 border border-white/10 p-6 rounded-2xl flex flex-col hover:border-[#72b1b1]/30 hover:bg-white/10 transition-all duration-300 hover-lift"
+              className={`bg-white/5 border border-white/10 p-6 rounded-[28px] flex flex-col hover:border-[#72b1b1]/50 hover:bg-white/10 transition-all duration-500 hover-lift fade-up stagger-${index + 1} group border-beam`}
             >
-              <div className="relative rounded-xl mb-6 aspect-[4/3] flex items-center justify-center overflow-hidden bg-white/5 border border-slate-600/50 p-4 shimmer-effect">
+              <div className="relative rounded-2xl mb-6 aspect-[4/3] flex items-center justify-center overflow-hidden bg-white/5 border border-slate-600/30 p-4 shadow-inner">
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-full object-contain transition-transform duration-500 hover:scale-110"
+                  className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110"
                 />
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#72b1b1]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
-              <h3 className="font-bold mb-3 text-lg text-white">{service.title}</h3>
-              <p className="text-[15px] text-gray-400 leading-relaxed mb-5 flex-grow">{service.description}</p>
-              <ul className="space-y-2 text-[13px] text-slate-300">
+              <h3 className="font-bold mb-3 text-lg text-white group-hover:text-[#72b1b1] transition-colors">{service.title}</h3>
+              <p className="text-[14px] text-gray-400 leading-relaxed mb-6 flex-grow">{service.description}</p>
+              <ul className="space-y-3 text-[12px] text-slate-300">
                 {service.benefits.map((b, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span className="text-[#72b1b1] mt-0.5">—</span>
+                  <li key={i} className="flex items-start gap-2 group/item">
+                    <span className="text-[#72b1b1] mt-1 shrink-0 w-1.5 h-1.5 rounded-full bg-[#72b1b1] group-hover/item:scale-125 transition-transform" />
                     <span>{b}</span>
                   </li>
                 ))}
