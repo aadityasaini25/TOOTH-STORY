@@ -31,6 +31,7 @@ export default function Header({ onBookAppointment }: HeaderProps) {
               width={140}
               height={45}
               className="h-8 md:h-10 w-auto"
+              priority
             />
           </div>
           <div className="hidden lg:block">

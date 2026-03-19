@@ -6,9 +6,9 @@ export default function BackgroundGraphics() {
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden select-none">
       {/* Dynamic Blobs */}
-      <div className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-[#72b1b1] rounded-full blur-[120px] opacity-[0.12] animate-pulse" />
-      <div className="absolute bottom-[-5%] right-[-5%] w-[500px] h-[500px] bg-[#485b51] rounded-full blur-[100px] opacity-[0.08] soft-float" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-pattern-dots opacity-[0.03]" />
+      <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-[#72b1b1] rounded-full blur-[80px] opacity-[0.08] animate-pulse" />
+      <div className="absolute bottom-[-5%] right-[-5%] w-[400px] h-[400px] bg-[#485b51] rounded-full blur-[70px] opacity-[0.05] soft-float" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-pattern-dots opacity-[0.02]" />
 
       {/* Decorative SVG Icons - Floating */}
       <div className="absolute top-1/4 right-[10%] opacity-20 soft-float" style={{ animationDelay: '1s' }}>
