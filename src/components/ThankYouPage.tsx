@@ -19,7 +19,7 @@ export default function ThankYouPage() {
           <div className="flex flex-col md:flex-row items-center gap-8 mb-8">
             <div className="w-48 h-48 relative rounded-full overflow-hidden border-4 border-gray-200">
               <Image
-                src="/images/doctor/NIKUNJ.jpeg"
+                src="/images/doctor/Dr. NIKUNJ.jpeg"
                 alt="Dr. Nikunj Maniyar"
                 fill
                 className="object-cover object-top"
