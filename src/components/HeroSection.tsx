@@ -14,6 +14,24 @@ export default function HeroSection({ onBookAppointment }: HeroSectionProps) {
 
       <div className="text-center mb-10 md:mb-12 fade-up">
         <p className="text-[#72b1b1] font-semibold text-sm uppercase tracking-[0.2em] mb-4">Tooth Story – Dental Clinic For All</p>
+
+        <div className="inline-block mb-10 fade-up" style={{ animationDelay: '200ms' }}>
+          <div className="bg-white/80 backdrop-blur-md border border-[#72b1b1]/20 px-8 py-4 rounded-[28px] shadow-2xl shadow-teal-500/10 flex items-center gap-5 hover:scale-105 transition-all duration-500 group">
+            <div className="bg-[#72b1b1]/10 p-3 rounded-2xl group-hover:bg-[#72b1b1]/20 transition-colors">
+              <span className="text-2xl">✨</span>
+            </div>
+            <div className="text-left">
+              <p className="text-[10px] text-[#72b1b1] font-black uppercase tracking-[0.2em] mb-0.5">Limited Period Offer</p>
+              <h3 className="text-gray-900 font-black text-lg md:text-2xl leading-none">
+                Upto <span className="text-[#72b1b1]">20% OFF</span> on Invisalign
+              </h3>
+              <p className="text-gray-500 font-medium text-[11px] md:text-sm mt-1">
+                Prices starting from only <span className="text-gray-900 font-bold">₹90,000*</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
         <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-gray-900 mb-6 leading-tight">
           Building Bright Smiles<br className="hidden md:block" />
           <span className="text-gradient-teal">from the Start</span>
@@ -28,7 +46,7 @@ export default function HeroSection({ onBookAppointment }: HeroSectionProps) {
           <div className="bg-black w-full h-full flex items-center justify-center shimmer-effect">
             <video
               className="w-full h-full object-cover scale-105"
-              src="/videos/My Movie.mp4"
+              src="/videos/herovedio.mp4"
               autoPlay
               muted
               loop

@@ -78,9 +78,6 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-            <p className="mt-2 text-[10px] sm:text-[11px] text-[#72b1b1] font-medium leading-tight">
-              Avail limited period offer of upto 20% Off on Invisalign treatment with prices starting from as low as Rs 90,000 only.
-            </p>
           </div>
 
           <div className="bg-gray-100 rounded-xl overflow-hidden h-[160px] shadow-inner border border-gray-200">
