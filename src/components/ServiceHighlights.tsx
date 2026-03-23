@@ -26,7 +26,7 @@ export default function ServiceHighlights() {
     },
     {
       title: "Kids Jaw Expanders",
-      image: "/images/ortho/expander.png",
+      image: "/images/ortho/expander_new_3d.png",
       description:
         "Early intervention to create space and guide jaw growth for a healthier, straighter smile.",
       benefits: [
