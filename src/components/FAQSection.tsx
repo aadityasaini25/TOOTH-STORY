@@ -1,69 +1,158 @@
 'use client';
 
 import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Plus, Minus, Sparkles } from 'lucide-react';
+import Image from 'next/image';
+
+interface FAQItem {
+  question: string;
+  answer: string;
+  benefit: string;
+  image: string;
+}
+
+const faqs: FAQItem[] = [
+  {
+    question: "How do Invisalign aligners work?",
+    answer:
+      "Invisalign uses a series of custom-made, clear plastic trays to gradually shift your teeth into the desired position.",
+    benefit: "Enjoy your favorite foods without restrictions.",
+    image: "/images/FAQimage.png"
+  },
+  {
+    question: "How long will my orthodontic treatment take?",
+    answer:
+      "Treatment duration varies based on complexity, typically ranging from 12 to 24 months, with minor cases finished in just 6 months.",
+    benefit: "Experience a faster transformation with advanced 3D planning.",
+    image: "/images/FAQimage.png"
+  },
+  {
+    question: "Are clear aligners as effective as traditional braces?",
+    answer:
+      "Yes, modern clear aligners are highly effective for most cases, providing precise tooth movement with maximum comfort.",
+    benefit: "Achieve professional results without the discomfort of metal.",
+    image: "/images/FAQimage.png"
+  },
+  {
+    question: "Can I eat normally with clear aligners?",
+    answer:
+      "Since the aligners are removable, there are zero dietary restrictions. Simply remove them to eat, brush, and floss.",
+    benefit: "Maintain your lifestyle while your smile improves every day.",
+    image: "/images/FAQimage.png"
+  }
+];
 
 export default function FAQSection() {
-  const [openFAQ, setOpenFAQ] = useState<number | null>(null);
-
-  const faqs = [
-    {
-      question: "How do Invisalign aligners work?",
-      answer:
-        "Invisalign uses a series of custom-made, clear plastic trays to gradually shift your teeth into the desired position. Each set is worn for about 1-2 weeks before moving to the next in the series.",
-    },
-    {
-      question: "What is the right age for a child's first orthodontic evaluation?",
-      answer:
-        "The American Association of Orthodontists recommends a first check-up by age 7. Early evaluation allows us to detect potential issues and intervene at the optimal time for the best results.",
-    },
-    {
-      question: "How long will my orthodontic treatment take?",
-      answer:
-        "Treatment duration varies based on the complexity of the case. On average, Invisalign or braces treatment takes between 12 to 24 months, though some minor corrections can be completed in as little as 6 months.",
-    },
-    {
-      question: "Can I eat normally with braces or aligners?",
-      answer:
-        "With Invisalign, you remove the trays to eat, so there are no dietary restrictions. With traditional braces, we recommend avoiding very hard, sticky, or crunchy foods to prevent damage to the brackets and wires.",
-    },
-    {
-      question: "Are clear aligners as effective as traditional metal braces?",
-      answer:
-        "Yes, for most cases, modern clear aligners are just as effective as traditional braces. During your consultation, we will determine which option is best suited for your specific dental needs.",
-    }
-  ];
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggleFAQ = (index: number) => {
-    setOpenFAQ(openFAQ === index ? null : index);
+    setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <section className="py-20 md:py-32 px-4 md:px-8 bg-white">
+    <section className="py-16 md:py-24 px-4 md:px-8 bg-white" id="faq">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 tracking-tight text-gray-900">
-          Frequently Asked <span className="text-gradient-gold">Questions</span>
-        </h2>
+        <div className="text-center mb-12">
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-medium mb-4"
+          >
+            <Sparkles size={14} />
+            <span>Got Questions? We Have Answers</span>
+          </motion.div>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight text-gray-900 leading-tight">
+            Common <span className="text-[#485b51]">Questions</span>
+          </h2>
+          <p className="text-gray-500 max-w-xl mx-auto text-base md:text-lg font-light">
+            Empowering your decision with transparent information and clinical insights.
+          </p>
+        </div>
 
-        <div className="space-y-6">
+        <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <div key={index} className="card !p-0 overflow-hidden">
+            <div 
+              key={index} 
+              className={`group transition-all duration-300 rounded-2xl border bg-white ${
+                openIndex === index 
+                ? 'border-[#485b51]/20 shadow-md' 
+                : 'border-gray-100 hover:border-gray-200'
+              }`}
+            >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full p-6 md:p-8 text-left font-bold hover:bg-emerald-50 transition-colors flex justify-between items-center group"
+                aria-expanded={openIndex === index}
+                className="w-full p-5 md:p-6 text-left flex justify-between items-center focus:outline-none"
               >
-                <span className="flex-grow pr-4 text-lg md:text-xl text-gray-800 group-hover:text-[#485b51] transition-colors">{faq.question}</span>
-                <span className={`w-8 h-8 rounded-full border border-emerald-100 flex items-center justify-center text-[#485b51] transform transition-transform duration-300 ${openFAQ === index ? 'rotate-180 bg-[#485b51] text-white' : ''}`}>
-                  ▼
+                <span className={`text-lg md:text-xl font-bold tracking-tight transition-colors duration-300 ${
+                  openIndex === index ? 'text-[#485b51]' : 'text-gray-800'
+                }`}>
+                  {faq.question}
                 </span>
-              </button>
-              {openFAQ === index && (
-                <div className="px-6 pb-8 md:px-8 md:pb-10 bg-white">
-                  <div className="w-full h-px bg-emerald-50 mb-8"></div>
-                  <p className="text-gray-600 font-light text-lg md:text-xl leading-relaxed">{faq.answer}</p>
+                <div className={`flex-shrink-0 ml-4 w-9 h-9 rounded-xl border flex items-center justify-center transition-all duration-300 ${
+                  openIndex === index 
+                  ? 'bg-[#485b51] border-[#485b51] text-white rotate-90 shadow-sm shadow-[#485b51]/20' 
+                  : 'bg-gray-50 border-gray-100 text-gray-400 group-hover:border-[#485b51]/30 group-hover:text-[#485b51]'
+                }`}>
+                  {openIndex === index ? <Minus size={16} /> : <Plus size={16} />}
                 </div>
-              )}
+              </button>
+
+              <AnimatePresence>
+                {openIndex === index && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                  >
+                    <div className="px-5 pb-6 md:px-6 md:pb-8 pt-0">
+                      <div className="w-full h-px bg-gray-50 mb-6" />
+                      
+                      <div className="grid md:grid-cols-[1fr_0.7fr] gap-6 md:gap-10 items-start">
+                        <div className="space-y-4">
+                          <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+                            {faq.answer}
+                          </p>
+                          <p className="text-[#485b51] text-base font-medium leading-relaxed italic border-l-2 border-emerald-100 pl-4">
+                            "{faq.benefit}"
+                          </p>
+                        </div>
+
+                        <div className="relative">
+                          <p className="text-[9px] uppercase tracking-wider font-bold text-gray-400 mb-2">
+                            Clear Aligner Example
+                          </p>
+                          <motion.div 
+                            initial={{ opacity: 0, scale: 0.98 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            className="relative h-48 md:h-56 w-full rounded-2xl overflow-hidden shadow-lg"
+                          >
+                            <Image
+                              src={faq.image}
+                              alt="Clear Aligner"
+                              fill
+                              className="object-cover"
+                              sizes="(max-width: 768px) 100vw, 300px"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+                          </motion.div>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           ))}
+        </div>
+        
+        <div className="mt-12 text-center">
+          <p className="text-gray-400 text-xs">
+            Still have questions? <a href="tel:+919023523178" className="text-[#485b51] font-bold underline hover:text-[#3d4d44] transition-colors">Contact our specialists</a>.
+          </p>
         </div>
       </div>
     </section>
