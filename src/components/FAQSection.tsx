@@ -9,7 +9,6 @@ interface FAQItem {
   question: string;
   answer: string;
   benefit: string;
-  image: string;
 }
 
 const faqs: FAQItem[] = [
@@ -18,28 +17,24 @@ const faqs: FAQItem[] = [
     answer:
       "Invisalign uses a series of custom-made, clear plastic trays to gradually shift your teeth into the desired position.",
     benefit: "Enjoy your favorite foods without restrictions.",
-    image: "/images/FAQimage.png"
   },
   {
     question: "How long will my orthodontic treatment take?",
     answer:
       "Treatment duration varies based on complexity, typically ranging from 12 to 24 months, with minor cases finished in just 6 months.",
     benefit: "Experience a faster transformation with advanced 3D planning.",
-    image: "/images/FAQimage.png"
   },
   {
     question: "Are clear aligners as effective as traditional braces?",
     answer:
       "Yes, modern clear aligners are highly effective for most cases, providing precise tooth movement with maximum comfort.",
     benefit: "Achieve professional results without the discomfort of metal.",
-    image: "/images/FAQimage.png"
   },
   {
     question: "Can I eat normally with clear aligners?",
     answer:
       "Since the aligners are removable, there are zero dietary restrictions. Simply remove them to eat, brush, and floss.",
     benefit: "Maintain your lifestyle while your smile improves every day.",
-    image: "/images/FAQimage.png"
   }
 ];
 
@@ -111,35 +106,13 @@ export default function FAQSection() {
                     <div className="px-5 pb-6 md:px-6 md:pb-8 pt-0">
                       <div className="w-full h-px bg-gray-50 mb-6" />
                       
-                      <div className="grid md:grid-cols-[1fr_0.7fr] gap-6 md:gap-10 items-start">
-                        <div className="space-y-4">
-                          <p className="text-gray-600 text-base md:text-lg leading-relaxed">
-                            {faq.answer}
-                          </p>
-                          <p className="text-[#485b51] text-base font-medium leading-relaxed italic border-l-2 border-emerald-100 pl-4">
-                            "{faq.benefit}"
-                          </p>
-                        </div>
-
-                        <div className="relative">
-                          <p className="text-[9px] uppercase tracking-wider font-bold text-gray-400 mb-2">
-                            Clear Aligner Example
-                          </p>
-                          <motion.div 
-                            initial={{ opacity: 0, scale: 0.98 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            className="relative h-48 md:h-56 w-full rounded-2xl overflow-hidden shadow-lg"
-                          >
-                            <Image
-                              src={faq.image}
-                              alt="Clear Aligner"
-                              fill
-                              className="object-cover"
-                              sizes="(max-width: 768px) 100vw, 300px"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-                          </motion.div>
-                        </div>
+                      <div className="space-y-4">
+                        <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+                          {faq.answer}
+                        </p>
+                        <p className="text-[#485b51] text-base font-medium leading-relaxed italic border-l-2 border-emerald-100 pl-4">
+                          "{faq.benefit}"
+                        </p>
                       </div>
                     </div>
                   </motion.div>
