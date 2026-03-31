@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus, Sparkles } from 'lucide-react';
-import Image from 'next/image';
 
 interface FAQItem {
   question: string;

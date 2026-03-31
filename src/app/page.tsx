@@ -8,6 +8,7 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 import DoctorProfile from "@/components/DoctorProfile";
 import ServiceHighlights from "@/components/ServiceHighlights";
 import FAQSection from "@/components/FAQSection";
+import RealTransformations from "@/components/RealTransformations";
 import ClinicPhotos from "@/components/ClinicPhotos";
 import GoogleReviews from "@/components/GoogleReviews";
 import CTABox from "@/components/CTABox";
@@ -110,6 +111,8 @@ export default function Home() {
         <WhyChooseUs />
         <DoctorProfile onBookAppointment={openPopup} />
         <ServiceHighlights />
+        <RealTransformations />
+        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent max-w-4xl mx-auto opacity-50" />
         <FAQSection />
         <ClinicPhotos onBookAppointment={openPopup} />
         <GoogleReviews />
