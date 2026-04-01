@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function VideoTestimonial() {
   return (
     <section className="p-4 md:p-8 lg:p-12 bg-gray-50">
@@ -10,27 +12,39 @@ export default function VideoTestimonial() {
         </div>
 
         <div className="bg-white border rounded-lg p-0 md:p-6 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4 justify-items-center">
-            <img
-              src="/images/patent1.jpeg"
-              alt="Testimonial 1"
-              className="w-full h-auto object-cover md:rounded-lg md:shadow-md"
-            />
-            <img
-              src="/images/Patient photos 5.jpeg"
-              alt="Testimonial 2"
-              className="w-full h-auto object-cover md:rounded-lg md:shadow-md"
-            />
-            <img
-              src="/images/patent3.jpeg"
-              alt="Testimonial 3"
-              className="w-full h-auto object-cover md:rounded-lg md:shadow-md"
-            />
-            <img
-              src="/images/Patient photos 6.jpeg"
-              alt="Testimonial 4"
-              className="w-full h-auto object-cover md:rounded-lg md:shadow-md"
-            />
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 justify-items-center">
+            <div className="relative w-full aspect-square md:rounded-lg md:shadow-md overflow-hidden bg-gray-100">
+              <Image
+                src="/images/patent1.jpeg"
+                alt="Patient Satisfaction Story 1"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="relative w-full aspect-square md:rounded-lg md:shadow-md overflow-hidden bg-gray-100">
+              <Image
+                src="/images/Patient photos 5.jpeg"
+                alt="Patient Satisfaction Story 2"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="relative w-full aspect-square md:rounded-lg md:shadow-md overflow-hidden bg-gray-100">
+              <Image
+                src="/images/patent3.jpeg"
+                alt="Patient Satisfaction Story 3"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="relative w-full aspect-square md:rounded-lg md:shadow-md overflow-hidden bg-gray-100">
+              <Image
+                src="/images/Patient photos 6.jpeg"
+                alt="Patient Satisfaction Story 4"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
       </div>

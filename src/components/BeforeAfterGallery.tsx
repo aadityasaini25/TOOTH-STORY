@@ -50,7 +50,7 @@ export default function BeforeAfterGallery({ onBookAppointment }: BeforeAfterGal
                   Patient Story {index + 1}
                 </div>
               </div>
-              <p className="mt-4 text-center text-gray-700 font-medium italic">"{video.title}"</p>
+              <p className="mt-4 text-center text-gray-700 font-medium italic">&quot;{video.title}&quot;</p>
             </div>
           ))}
         </div>

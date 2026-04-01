@@ -2,7 +2,6 @@
 export { default as Header } from './Header';
 export { default as HeroSection } from './HeroSection';
 export { default as ServiceHighlights } from './ServiceHighlights';
-export { default as TransformingSmiles } from './TransformingSmiles';
 export { default as CTABox } from './CTABox';
 export { default as GoogleReviews } from './GoogleReviews';
 export { default as VideoTestimonial } from './VideoTestimonial';

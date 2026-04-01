@@ -110,7 +110,7 @@ export default function FAQSection() {
                           {faq.answer}
                         </p>
                         <p className="text-[#485b51] text-base font-medium leading-relaxed italic border-l-2 border-emerald-100 pl-4">
-                          "{faq.benefit}"
+                          &quot;{faq.benefit}&quot;
                         </p>
                       </div>
                     </div>
