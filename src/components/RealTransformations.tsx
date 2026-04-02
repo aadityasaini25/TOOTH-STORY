@@ -23,13 +23,6 @@ type Item = TransformationItem | KidsItem;
 
 const TRANSFORMATION_ITEMS: Item[] = [
   {
-    type: 'transformation',
-    before: '/img/before-after/beforeafter1.png',
-    after: '/img/before-after/beforeafter2.png',
-    title: 'Smile Correction',
-    description: 'Precision alignment & gap closure'
-  },
-  {
     type: 'kids',
     image: '/img/before-after/certifficate1.png',
     title: 'Kids Care Excellence',
