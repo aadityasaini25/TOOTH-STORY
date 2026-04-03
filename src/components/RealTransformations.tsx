@@ -10,6 +10,7 @@ type TransformationItem = {
   after: string;
   title: string;
   description: string;
+  badgeText?: string;
 };
 
 type KidsItem = {
@@ -51,6 +52,25 @@ const TRANSFORMATION_ITEMS: Item[] = [
     after: '/img/before-after/beforeafter5.png',
     title: 'Smile Enhancement',
     description: 'Beautiful results'
+  },
+  {
+    type: 'transformation',
+    after: '/img/before-after/beforeafter6.png',
+    title: 'Teeth Alignment',
+    description: 'Precision correction'
+  },
+  {
+    type: 'transformation',
+    after: '/img/before-after/beforeafter7.png',
+    title: 'Advanced Correction',
+    description: 'Gap and alignment resolution'
+  },
+  {
+    type: 'transformation',
+    after: '/img/before-after/beforeafter8.png',
+    title: 'Invisalign Excellence',
+    description: 'Total smile transformation',
+    badgeText: 'none'
   }
 ];
 
@@ -181,7 +201,11 @@ export default function RealTransformations() {
                         ) : (
                           <>
                             <Image draggable={false} src={item.after} alt={item.title} fill className="object-cover group-hover:scale-110 transition-transform duration-1000" sizes="(max-width: 768px) 240px, 340px" />
-                            <div className="absolute top-3 left-3 bg-[#485b51] text-white text-[10px] px-2.5 py-1 rounded-full font-bold uppercase tracking-wider shadow-sm z-10">Result</div>
+                            {item.badgeText !== 'none' && (
+                              <div className="absolute top-3 left-3 bg-[#485b51] text-white text-[10px] px-2.5 py-1 rounded-full font-bold uppercase tracking-wider shadow-sm z-10">
+                                {item.badgeText || 'Result'}
+                              </div>
+                            )}
                           </>
                         )
                       ) : (
