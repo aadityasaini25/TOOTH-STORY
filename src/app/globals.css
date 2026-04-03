@@ -175,6 +175,14 @@
     padding-block: 0.5rem;
     box-shadow: 0 4px 20px -5px rgba(114, 177, 177, 0.15);
   }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
 @layer components {

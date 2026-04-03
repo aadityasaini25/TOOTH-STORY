@@ -23,6 +23,7 @@ export default function ThankYouPage() {
                 alt="Dr. Nikunj Maniyar"
                 fill
                 className="object-cover object-top"
+                sizes="(max-width: 768px) 192px, 192px"
               />
             </div>
             <div className="text-center md:text-left">
@@ -67,13 +68,13 @@ export default function ThankYouPage() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:+919726992969"
+              href="tel:+919023523178"
               className="inline-flex justify-center items-center px-6 py-3 bg-[#72b1b1] text-white font-medium rounded-lg hover:bg-[#5a8d8d] transition-colors gap-2"
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
                 <path fillRule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clipRule="evenodd" />
               </svg>
-              Call Now
+              Call Now: +91 90235 23178
             </a>
 
           </div>

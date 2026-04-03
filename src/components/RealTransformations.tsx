@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { motion, useAnimationFrame, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { useRef, useState, useEffect } from 'react';
 
 type TransformationItem = {
   type: 'transformation';
@@ -55,15 +55,64 @@ const TRANSFORMATION_ITEMS: Item[] = [
 ];
 
 export default function RealTransformations() {
-  const [isPaused, setIsPaused] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const x = useMotionValue(0);
   
-  // Duplicate items for infinite scroll effect (3x to ensure NO gaps even on large screens)
-  const allItems = [...TRANSFORMATION_ITEMS, ...TRANSFORMATION_ITEMS, ...TRANSFORMATION_ITEMS];
+  // Interaction tracking
+  const [isHovered, setIsHovered] = useState(false);
+  const lastInteractionTime = useRef(0);
+  const resumeDelay = 2000; // 2 seconds
+
+  // Auto-scroll logic
+  const baseVelocity = -0.75; // px per frame at 60fps (approx 45px/sec)
+  
+  useAnimationFrame((time, delta) => {
+    const timeSinceInteraction = Date.now() - lastInteractionTime.current;
+    if (!isHovered && timeSinceInteraction > resumeDelay) {
+      // Smoothly move by velocity adjusted for frame time (delta)
+      const moveBy = baseVelocity * (delta / 16);
+      x.set(x.get() + moveBy);
+    }
+
+    // Infinite wrap logic
+    if (containerRef.current) {
+      const singleSetWidth = containerRef.current.scrollWidth / 2;
+      const currentX = x.get();
+      
+      // If we've scrolled past one full set to the left
+      if (currentX <= -singleSetWidth) {
+        x.set(currentX + singleSetWidth);
+      } 
+      // If we've scrolled to the right (manual trackpad)
+      else if (currentX > 0) {
+        x.set(currentX - singleSetWidth);
+      }
+    }
+  });
+
+  // Trackpad / Scroll support
+  const handleWheel = (e: React.WheelEvent) => {
+    lastInteractionTime.current = Date.now();
+    // Support horizontal and vertical scrolling (some trackpads use vertical for horizontal scroll)
+    const delta = e.deltaX || e.deltaY;
+    x.set(x.get() - delta);
+  };
+
+  // Drag support starts here (via motion.div drag props)
+  const handleDragStart = () => {
+    lastInteractionTime.current = Date.now();
+  };
+
+  const handleDrag = () => {
+    lastInteractionTime.current = Date.now();
+  };
+
+  // Double the items for seamless loop
+  const allItems = [...TRANSFORMATION_ITEMS, ...TRANSFORMATION_ITEMS];
 
   return (
     <section className="py-20 md:py-32 bg-[#f8fafb] overflow-hidden relative" id="transformations">
       <div className="max-w-7xl mx-auto px-4 md:px-8 mb-16">
-        {/* Section Header */}
         <div className="text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -81,110 +130,71 @@ export default function RealTransformations() {
         </div>
       </div>
 
-      {/* Marquee Container */}
-      <div className="relative w-full overflow-hidden py-10 group/marquee">
-        {/* Gradient Overlays for Fade Effect */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 md:w-64 bg-gradient-to-r from-[#f8fafb] via-[#f8fafb]/80 to-transparent z-20 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-24 md:w-64 bg-gradient-to-l from-[#f8fafb] via-[#f8fafb]/80 to-transparent z-20 pointer-events-none" />
+      <div className="relative w-full py-10">
+        {/* Edge Blurs for Premium Feel */}
+        <div className="absolute left-0 top-0 bottom-0 w-24 md:w-64 bg-gradient-to-r from-[#f8fafb] via-[#f8fafb]/80 to-transparent z-30 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 md:w-64 bg-gradient-to-l from-[#f8fafb] via-[#f8fafb]/80 to-transparent z-30 pointer-events-none" />
 
-        {/* Scrolling Row */}
         <div 
-          className="flex w-max"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
+          className="flex overflow-hidden active:cursor-grabbing"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          onWheel={handleWheel}
         >
-          <motion.div
-            className="flex gap-6 px-3"
-            animate={{ x: isPaused ? undefined : [0, '-33.33%'] }}
-            transition={{
-              x: {
-                duration: 60,
-                repeat: Infinity,
-                ease: "linear",
-              }
-            }}
+          <motion.div 
+            ref={containerRef}
+            className="flex gap-6 px-3 py-4 cursor-grab"
+            style={{ x }}
+            drag="x"
+            dragConstraints={{ left: -10000, right: 10000 }} // Effectively infinite
+            onDragStart={handleDragStart}
+            onDrag={handleDrag}
+            onDragEnd={() => { lastInteractionTime.current = Date.now(); }}
           >
             {allItems.map((item, idx) => (
               <div 
                 key={`${item.title}-${idx}`} 
-                className="flex-shrink-0 w-[280px] md:w-[340px]"
+                className="flex-shrink-0 w-[240px] md:w-[340px]"
+                onDragStart={(e) => e.preventDefault()} // Prevent native ghost image
+                onClick={(e) => {
+                  // Prevent click if we were dragging (standard UI pattern)
+                  if (!lastInteractionTime.current || Date.now() - lastInteractionTime.current < 100) {
+                    // Actual click logic here if needed
+                  }
+                }}
               >
-                <div className="bg-white rounded-[24px] shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-700 hover:-translate-y-3 border border-gray-100 overflow-hidden h-full group">
+                <div className="bg-white rounded-[24px] shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-700 hover:-translate-y-3 border border-gray-100 overflow-hidden h-full group select-none pointer-events-none md:pointer-events-auto">
                   <div className="p-4 flex flex-col h-full">
-                    {/* Image Container */}
                     <div className="relative aspect-[4/3] rounded-[18px] overflow-hidden bg-gray-50 mb-5">
                       {item.type === 'transformation' ? (
                         item.before ? (
-                          /* Stacked Before/After UI */
                           <div className="grid grid-cols-2 h-full gap-0.5">
                             <div className="relative h-full overflow-hidden">
-                              <Image
-                                src={item.before}
-                                alt="Before"
-                                fill
-                                className="object-cover group-hover:scale-110 transition-transform duration-1000"
-                              />
-                              <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-gray-900 text-[10px] px-2.5 py-1 rounded-full font-bold uppercase tracking-wider shadow-sm z-10">
-                                Before
-                              </div>
+                              <Image draggable={false} src={item.before} alt="Before" fill className="object-cover group-hover:scale-110 transition-transform duration-1000" sizes="(max-width: 768px) 120px, 170px" />
+                              <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-gray-900 text-[10px] px-2.5 py-1 rounded-full font-bold uppercase tracking-wider shadow-sm z-10">Before</div>
                             </div>
                             <div className="relative h-full overflow-hidden">
-                              <Image
-                                src={item.after}
-                                alt="After"
-                                fill
-                                className="object-cover group-hover:scale-110 transition-transform duration-1000"
-                              />
-                              <div className="absolute top-3 left-3 bg-[#485b51] text-white text-[10px] px-2.5 py-1 rounded-full font-bold uppercase tracking-wider shadow-sm z-10">
-                                After
-                              </div>
+                              <Image draggable={false} src={item.after} alt="After" fill className="object-cover group-hover:scale-110 transition-transform duration-1000" sizes="(max-width: 768px) 120px, 170px" />
+                              <div className="absolute top-3 left-3 bg-[#485b51] text-white text-[10px] px-2.5 py-1 rounded-full font-bold uppercase tracking-wider shadow-sm z-10">After</div>
                             </div>
                           </div>
                         ) : (
-                          /* Single After Image UI */
                           <>
-                            <Image
-                              src={item.after}
-                              alt={item.title}
-                              fill
-                              className="object-cover group-hover:scale-110 transition-transform duration-1000"
-                            />
-                            <div className="absolute top-3 left-3 bg-[#485b51] text-white text-[10px] px-2.5 py-1 rounded-full font-bold uppercase tracking-wider shadow-sm z-10">
-                              Result
-                            </div>
+                            <Image draggable={false} src={item.after} alt={item.title} fill className="object-cover group-hover:scale-110 transition-transform duration-1000" sizes="(max-width: 768px) 240px, 340px" />
+                            <div className="absolute top-3 left-3 bg-[#485b51] text-white text-[10px] px-2.5 py-1 rounded-full font-bold uppercase tracking-wider shadow-sm z-10">Result</div>
                           </>
                         )
                       ) : (
-                        /* Kids Care UI */
                         <>
-                          <Image
-                            src={item.image}
-                            alt={item.title}
-                            fill
-                            className="object-contain p-4 group-hover:scale-110 transition-transform duration-1000"
-                          />
-                          <div className="absolute top-3 right-3 bg-orange-500 text-white text-[10px] px-2.5 py-1 rounded-full font-bold uppercase tracking-wider shadow-lg z-10">
-                            {item.badge}
-                          </div>
+                          <Image draggable={false} src={item.image} alt={item.title} fill className="object-contain p-4 group-hover:scale-110 transition-transform duration-1000" sizes="(max-width: 768px) 240px, 340px" />
+                          <div className="absolute top-3 right-3 bg-orange-500 text-white text-[10px] px-2.5 py-1 rounded-full font-bold uppercase tracking-wider shadow-lg z-10">{item.badge}</div>
                         </>
                       )}
                     </div>
-
-                    {/* Content */}
                     <div className="px-2 pb-2">
-                      <h4 className="text-gray-900 font-bold text-xl mb-1.5 group-hover:text-[#485b51] transition-colors duration-500">
-                        {item.title}
-                      </h4>
-                      {item.type === 'transformation' && (
-                        <p className="text-gray-500 text-sm font-light leading-relaxed">
-                          {item.description}
-                        </p>
-                      )}
-                      {item.type === 'kids' && (
-                        <p className="text-gray-400 text-xs font-medium uppercase tracking-widest mt-1">
-                          Gentle Pediatric Care
-                        </p>
-                      )}
+                      <h4 className="text-gray-900 font-bold text-xl mb-1.5 group-hover:text-[#485b51] transition-colors duration-500">{item.title}</h4>
+                      {item.type === 'transformation' && <p className="text-gray-500 text-sm font-light leading-relaxed">{item.description}</p>}
+                      {item.type === 'kids' && <p className="text-gray-400 text-xs font-medium uppercase tracking-widest mt-1">Gentle Pediatric Care</p>}
                     </div>
                   </div>
                 </div>
@@ -194,7 +204,6 @@ export default function RealTransformations() {
         </div>
       </div>
 
-      {/* Stats/Badge */}
       <div className="mt-12 text-center overflow-hidden">
         <motion.div
            initial={{ opacity: 0 }}
@@ -205,9 +214,7 @@ export default function RealTransformations() {
           <div className="flex -space-x-2">
             {[1, 2, 3].map((i) => (
               <div key={i} className="w-8 h-8 rounded-full border-2 border-white bg-gray-200 overflow-hidden">
-                 <div className="w-full h-full bg-[#485b51]/10 flex items-center justify-center text-[10px] font-bold text-[#485b51]">
-                   {i}
-                 </div>
+                 <div className="w-full h-full bg-[#485b51]/10 flex items-center justify-center text-[10px] font-bold text-[#485b51]">{i}</div>
               </div>
             ))}
           </div>
@@ -219,5 +226,3 @@ export default function RealTransformations() {
     </section>
   );
 }
-
-

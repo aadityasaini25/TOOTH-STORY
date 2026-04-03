@@ -12,6 +12,7 @@ export default function Footer() {
               width={100}
               height={25}
               className="h-auto opacity-100"
+              style={{ width: 'auto', height: 'auto' }}
             />
           </div>
           <p className="text-gray-400 max-w-2xl mx-auto font-light leading-relaxed text-xs md:text-sm">
@@ -23,7 +24,6 @@ export default function Footer() {
             <h3 className="font-bold text-white text-base border-b border-gray-800 pb-1">Contact Us</h3>
             <div className="space-y-1 mt-2">
               <a href="tel:+919023523178" className="block text-[#72b1b1] font-bold text-lg hover:scale-105 transition-transform inline-block">+91 90235 23178</a>
-              <p className="text-gray-300 font-medium text-xs">9023523178</p>
               <p className="text-gray-300 font-medium text-xs">Tooth Story Dental Clinic</p>
               <a href="mailto:info@toothstory.co.in" className="text-xs hover:text-[#72b1b1] transition-colors block">info@toothstory.co.in</a>
             </div>

@@ -19,6 +19,7 @@ export default function VideoTestimonial() {
                 alt="Patient Satisfaction Story 1"
                 fill
                 className="object-cover"
+                sizes="(max-width: 768px) 50vw, 25vw"
               />
             </div>
             <div className="relative w-full aspect-square md:rounded-lg md:shadow-md overflow-hidden bg-gray-100">
@@ -27,6 +28,7 @@ export default function VideoTestimonial() {
                 alt="Patient Satisfaction Story 2"
                 fill
                 className="object-cover"
+                sizes="(max-width: 768px) 50vw, 25vw"
               />
             </div>
             <div className="relative w-full aspect-square md:rounded-lg md:shadow-md overflow-hidden bg-gray-100">
@@ -35,6 +37,7 @@ export default function VideoTestimonial() {
                 alt="Patient Satisfaction Story 3"
                 fill
                 className="object-cover"
+                sizes="(max-width: 768px) 50vw, 25vw"
               />
             </div>
             <div className="relative w-full aspect-square md:rounded-lg md:shadow-md overflow-hidden bg-gray-100">
@@ -43,6 +46,7 @@ export default function VideoTestimonial() {
                 alt="Patient Satisfaction Story 4"
                 fill
                 className="object-cover"
+                sizes="(max-width: 768px) 50vw, 25vw"
               />
             </div>
           </div>
