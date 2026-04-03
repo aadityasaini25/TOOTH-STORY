@@ -45,12 +45,13 @@ export default function HeroSection({ onBookAppointment }: HeroSectionProps) {
           <div className="bg-black w-full h-full flex items-center justify-center shimmer-effect">
             <video
               className="w-full h-full object-cover scale-105"
-              src="/videos/herovedio.mp4"
               autoPlay
               muted
               loop
               playsInline
+              poster="/images/hero.png"
             >
+              <source src="/videos/herovedio.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>

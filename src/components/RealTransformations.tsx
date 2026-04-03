@@ -37,9 +37,21 @@ const TRANSFORMATION_ITEMS: Item[] = [
   },
   {
     type: 'transformation',
+    after: '/img/before-after/beforeafter1.png',
+    title: 'Smile Correction',
+    description: 'Complete smile transformation'
+  },
+  {
+    type: 'transformation',
+    after: '/img/before-after/beforeafter2.png',
+    title: 'Advanced Correction',
+    description: 'Precision orthodontics'
+  },
+  {
+    type: 'transformation',
     after: '/img/before-after/beforeafter3.png',
-    title: 'Advanced Orthodontics',
-    description: 'Professional transformation'
+    title: 'Orthodontic Excellence',
+    description: 'Metal braces transformation'
   },
   {
     type: 'transformation',
@@ -51,26 +63,79 @@ const TRANSFORMATION_ITEMS: Item[] = [
     type: 'transformation',
     after: '/img/before-after/beforeafter5.png',
     title: 'Smile Enhancement',
-    description: 'Beautiful results'
+    description: 'Beautiful aesthetic results'
   },
   {
     type: 'transformation',
     after: '/img/before-after/beforeafter6.png',
     title: 'Teeth Alignment',
-    description: 'Precision correction'
-  },
-  {
-    type: 'transformation',
-    after: '/img/before-after/beforeafter7.png',
-    title: 'Advanced Correction',
     description: 'Gap and alignment resolution'
   },
   {
     type: 'transformation',
+    after: '/img/before-after/beforeafter7.png',
+    title: 'Deep Bite Correction',
+    description: 'Functional dental correction'
+  },
+  {
+    type: 'transformation',
     after: '/img/before-after/beforeafter8.png',
-    title: 'Invisalign Excellence',
-    description: 'Total smile transformation',
-    badgeText: 'none'
+    title: 'Invisalign Masterclass',
+    description: 'Total smile transformation'
+  },
+  {
+    type: 'transformation',
+    after: '/img/before-after/beforeafter9.png',
+    title: 'Aesthetic Dentistry',
+    description: 'Premium smile redesign'
+  },
+  {
+    type: 'transformation',
+    after: '/img/before-after/beforeafter10.png',
+    title: 'Ceramic Correction',
+    description: 'Discrete orthodontic results'
+  },
+  {
+    type: 'transformation',
+    after: '/img/before-after/beforeafter11.png',
+    title: 'Modern Orthodontics',
+    description: 'Advanced clinical results'
+  },
+  {
+    type: 'transformation',
+    after: '/img/before-after/beforeafter12.png',
+    title: 'Smile Rehabilitation',
+    description: 'Complete dental makeover'
+  },
+  {
+    type: 'transformation',
+    after: '/img/before-after/beforeafter13.png',
+    title: 'Precision Correction',
+    description: 'Aligner transformation'
+  },
+  {
+    type: 'transformation',
+    after: '/img/before-after/beforeafter14.png',
+    title: 'Functional Alignment',
+    description: 'Health and aesthetics combined'
+  },
+  {
+    type: 'transformation',
+    after: '/img/before-after/beforeafter16.png',
+    title: 'Adult Orthodontics',
+    description: 'Professional transformation'
+  },
+  {
+    type: 'transformation',
+    after: '/img/before-after/beforeafter17.png',
+    title: 'Symmetry Restoration',
+    description: 'Balanced smile results'
+  },
+  {
+    type: 'transformation',
+    after: '/img/before-after/beforeafter18.png',
+    title: 'Premier Braces',
+    description: 'Traditional excellence'
   }
 ];
 
@@ -186,34 +251,34 @@ export default function RealTransformations() {
               >
                 <div className="bg-white rounded-[24px] shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-700 hover:-translate-y-3 border border-gray-100 overflow-hidden h-full group select-none pointer-events-none md:pointer-events-auto flex flex-col">
                   <div className="p-3 md:p-4 flex flex-col flex-grow">
-                    <div className="relative aspect-[4/3] rounded-[18px] overflow-hidden bg-gray-50 mb-0">
+                    <div className="relative aspect-square rounded-[18px] overflow-hidden bg-gray-50 mb-0 border border-gray-50 shadow-inner">
                       {item.type === 'transformation' ? (
                         item.before ? (
                           <div className="grid grid-cols-2 h-full gap-0.5">
-                            <div className="relative h-full overflow-hidden">
-                              <Image draggable={false} src={item.before} alt="Before" fill className="object-cover group-hover:scale-110 transition-transform duration-1000" sizes="(max-width: 768px) 240px, 340px" quality={100} priority={idx < 3} />
-                              <div className="absolute top-3 left-3 bg-white text-black text-[10px] px-3 py-1 rounded-full font-poppins font-bold uppercase tracking-wider shadow-sm z-10">Before</div>
+                            <div className="relative h-full overflow-hidden bg-white">
+                              <Image draggable={false} src={item.before} alt="Before" fill className="object-contain p-1 group-hover:scale-110 transition-transform duration-1000" sizes="(max-width: 768px) 240px, 340px" quality={100} priority={idx < 3} />
+                              <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-black text-[10px] px-3 py-1 rounded-full font-poppins font-bold uppercase tracking-wider shadow-sm z-10">Before</div>
                             </div>
-                            <div className="relative h-full overflow-hidden">
-                              <Image draggable={false} src={item.after} alt="After" fill className="object-cover group-hover:scale-110 transition-transform duration-1000" sizes="(max-width: 768px) 240px, 340px" quality={100} priority={idx < 3} />
-                              <div className="absolute top-3 left-3 bg-white text-black text-[10px] px-3 py-1 rounded-full font-poppins font-bold uppercase tracking-wider shadow-sm z-10">After</div>
+                            <div className="relative h-full overflow-hidden bg-white">
+                              <Image draggable={false} src={item.after} alt="After" fill className="object-contain p-1 group-hover:scale-110 transition-transform duration-1000" sizes="(max-width: 768px) 240px, 340px" quality={100} priority={idx < 3} />
+                              <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-black text-[10px] px-3 py-1 rounded-full font-poppins font-bold uppercase tracking-wider shadow-sm z-10">After</div>
                             </div>
                           </div>
                         ) : (
-                          <>
-                            <Image draggable={false} src={item.after} alt={item.title} fill className="object-cover group-hover:scale-110 transition-transform duration-1000" sizes="(max-width: 1024px) 480px, 680px" quality={100} priority={idx < 3} />
+                          <div className="relative h-full bg-white">
+                            <Image draggable={false} src={item.after} alt={item.title} fill className="object-contain p-1 group-hover:scale-110 transition-transform duration-1000" sizes="(max-width: 1024px) 480px, 680px" quality={100} priority={idx < 3} />
                             {item.badgeText !== 'none' && (
-                              <div className="absolute top-3 left-3 bg-white text-black text-[10px] px-3 py-1 rounded-full font-poppins font-bold uppercase tracking-wider shadow-sm z-10">
+                              <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-black text-[10px] px-3 py-1 rounded-full font-poppins font-bold uppercase tracking-wider shadow-sm z-10">
                                 {item.badgeText || 'Result'}
                               </div>
                             )}
-                          </>
+                          </div>
                         )
                       ) : (
-                        <>
+                        <div className="relative h-full bg-white">
                           <Image draggable={false} src={item.image} alt={item.title} fill className="object-contain p-4 group-hover:scale-110 transition-transform duration-1000" sizes="(max-width: 1024px) 480px, 680px" quality={100} priority={idx < 3} />
                           <div className="absolute top-3 right-3 bg-white text-black text-[10px] px-3 py-1 rounded-full font-poppins font-bold uppercase tracking-wider shadow-lg z-10">{item.badge}</div>
-                        </>
+                        </div>
                       )}
                     </div>
                   </div>
