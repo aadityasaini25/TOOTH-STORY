@@ -84,7 +84,8 @@ export default function RealTransformations() {
   const resumeDelay = 2000; // 2 seconds
 
   // Auto-scroll logic
-  const baseVelocity = -0.75; // px per frame at 60fps (approx 45px/sec)
+  // Auto-scroll logic (tuned for 'toothstory' speed)
+  const baseVelocity = -2.8; // Calibrated for roughly 2s per 340px slide transition
   
   useAnimationFrame((time, delta) => {
     const timeSinceInteraction = Date.now() - lastInteractionTime.current;
@@ -140,10 +141,10 @@ export default function RealTransformations() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-gray-900 leading-tight">
-              Real Smiles, <span className="text-[#485b51]">Real Transformations</span>
+            <h2 className="text-4xl md:text-6xl font-poppins font-bold mb-6 tracking-tight text-gray-900 leading-tight">
+              Real Smiles, <span className="text-teal">Real Transformations</span>
             </h2>
-            <p className="text-gray-500 max-w-2xl mx-auto text-lg md:text-xl font-light">
+            <p className="text-gray-500 max-w-2xl mx-auto text-lg md:text-xl font-poppins font-light leading-relaxed">
               From expert orthodontic corrections to gentle kids&apos; care, see the impact of professional dentistry.
             </p>
           </motion.div>
@@ -183,26 +184,26 @@ export default function RealTransformations() {
                   }
                 }}
               >
-                <div className="bg-white rounded-[24px] shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-700 hover:-translate-y-3 border border-gray-100 overflow-hidden h-full group select-none pointer-events-none md:pointer-events-auto">
-                  <div className="p-4 flex flex-col h-full">
-                    <div className="relative aspect-[4/3] rounded-[18px] overflow-hidden bg-gray-50 mb-5">
+                <div className="bg-white rounded-[24px] shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-700 hover:-translate-y-3 border border-gray-100 overflow-hidden h-full group select-none pointer-events-none md:pointer-events-auto flex flex-col">
+                  <div className="p-3 md:p-4 flex flex-col flex-grow">
+                    <div className="relative aspect-[4/3] rounded-[18px] overflow-hidden bg-gray-50 mb-0">
                       {item.type === 'transformation' ? (
                         item.before ? (
                           <div className="grid grid-cols-2 h-full gap-0.5">
                             <div className="relative h-full overflow-hidden">
-                              <Image draggable={false} src={item.before} alt="Before" fill className="object-cover group-hover:scale-110 transition-transform duration-1000" sizes="(max-width: 768px) 120px, 170px" />
-                              <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-gray-900 text-[10px] px-2.5 py-1 rounded-full font-bold uppercase tracking-wider shadow-sm z-10">Before</div>
+                              <Image draggable={false} src={item.before} alt="Before" fill className="object-cover group-hover:scale-110 transition-transform duration-1000" sizes="(max-width: 768px) 240px, 340px" quality={100} priority={idx < 3} />
+                              <div className="absolute top-3 left-3 bg-white text-black text-[10px] px-3 py-1 rounded-full font-poppins font-bold uppercase tracking-wider shadow-sm z-10">Before</div>
                             </div>
                             <div className="relative h-full overflow-hidden">
-                              <Image draggable={false} src={item.after} alt="After" fill className="object-cover group-hover:scale-110 transition-transform duration-1000" sizes="(max-width: 768px) 120px, 170px" />
-                              <div className="absolute top-3 left-3 bg-[#485b51] text-white text-[10px] px-2.5 py-1 rounded-full font-bold uppercase tracking-wider shadow-sm z-10">After</div>
+                              <Image draggable={false} src={item.after} alt="After" fill className="object-cover group-hover:scale-110 transition-transform duration-1000" sizes="(max-width: 768px) 240px, 340px" quality={100} priority={idx < 3} />
+                              <div className="absolute top-3 left-3 bg-white text-black text-[10px] px-3 py-1 rounded-full font-poppins font-bold uppercase tracking-wider shadow-sm z-10">After</div>
                             </div>
                           </div>
                         ) : (
                           <>
-                            <Image draggable={false} src={item.after} alt={item.title} fill className="object-cover group-hover:scale-110 transition-transform duration-1000" sizes="(max-width: 768px) 240px, 340px" />
+                            <Image draggable={false} src={item.after} alt={item.title} fill className="object-cover group-hover:scale-110 transition-transform duration-1000" sizes="(max-width: 1024px) 480px, 680px" quality={100} priority={idx < 3} />
                             {item.badgeText !== 'none' && (
-                              <div className="absolute top-3 left-3 bg-[#485b51] text-white text-[10px] px-2.5 py-1 rounded-full font-bold uppercase tracking-wider shadow-sm z-10">
+                              <div className="absolute top-3 left-3 bg-white text-black text-[10px] px-3 py-1 rounded-full font-poppins font-bold uppercase tracking-wider shadow-sm z-10">
                                 {item.badgeText || 'Result'}
                               </div>
                             )}
@@ -210,16 +211,16 @@ export default function RealTransformations() {
                         )
                       ) : (
                         <>
-                          <Image draggable={false} src={item.image} alt={item.title} fill className="object-contain p-4 group-hover:scale-110 transition-transform duration-1000" sizes="(max-width: 768px) 240px, 340px" />
-                          <div className="absolute top-3 right-3 bg-orange-500 text-white text-[10px] px-2.5 py-1 rounded-full font-bold uppercase tracking-wider shadow-lg z-10">{item.badge}</div>
+                          <Image draggable={false} src={item.image} alt={item.title} fill className="object-contain p-4 group-hover:scale-110 transition-transform duration-1000" sizes="(max-width: 1024px) 480px, 680px" quality={100} priority={idx < 3} />
+                          <div className="absolute top-3 right-3 bg-white text-black text-[10px] px-3 py-1 rounded-full font-poppins font-bold uppercase tracking-wider shadow-lg z-10">{item.badge}</div>
                         </>
                       )}
                     </div>
-                    <div className="px-2 pb-2">
-                      <h4 className="text-gray-900 font-bold text-xl mb-1.5 group-hover:text-[#485b51] transition-colors duration-500">{item.title}</h4>
-                      {item.type === 'transformation' && <p className="text-gray-500 text-sm font-light leading-relaxed">{item.description}</p>}
-                      {item.type === 'kids' && <p className="text-gray-400 text-xs font-medium uppercase tracking-widest mt-1">Gentle Pediatric Care</p>}
-                    </div>
+                  </div>
+                  <div className="bg-teal py-4 px-4 mt-auto">
+                    <h4 className="text-white font-poppins font-bold text-base md:text-lg text-center uppercase tracking-wide truncate">
+                      {item.title}
+                    </h4>
                   </div>
                 </div>
               </div>
@@ -242,7 +243,7 @@ export default function RealTransformations() {
               </div>
             ))}
           </div>
-          <p className="text-gray-600 text-sm font-medium">
+          <p className="text-gray-600 text-sm font-poppins font-medium">
             <span className="text-gray-900 font-bold">1,000+</span> Happy Patients
           </p>
         </motion.div>
